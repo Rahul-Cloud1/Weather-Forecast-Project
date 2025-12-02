@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-blue-400 to-blue-600 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-white text-center mb-8">Weather Forecast</h1>
+        
+        <!-- Search Section -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="flex">
+                <input type="text" id="city-input" placeholder="Enter city name" class="flex-1 px-4 py-2 rounded-l-lg border-0 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <button id="search-btn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-r-lg transition duration-300">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <button id="current-location-btn" class="mt-4 w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                <i class="fas fa-map-marker-alt"></i> Use Current Location
+            </button>
+        </div>
+
+        <!-- Recent Cities Dropdown -->
+        <div class="max-w-md mx-auto mb-8 hidden" id="recent-cities-container">
+            <select id="recent-cities" class="w-full px-4 py-2 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <option value="">Recently Searched Cities</option>
+            </select>
+        </div>
+
+        <!-- Current Weather -->
+        <div id="current-weather" class="max-w-2xl mx-auto bg-white bg-opacity-20 rounded-lg p-6 mb-8 hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 id="city-name" class="text-2xl font-bold text-white"></h2>
+                <div class="flex items-center">
+                    <span id="temperature" class="text-4xl font-bold text-white mr-2"></span>
+                    <button id="unit-toggle" class="text-white hover:text-gray-200 transition duration-300">°C</button>
+                </div>
+            </div>
+            <div class="flex items-center mb-4">
+                <i id="weather-icon" class="fas fa-sun text-6xl text-yellow-300 mr-4"></i>
+                <div>
+                    <p id="weather-description" class="text-white text-lg capitalize"></p>
+                    <p id="feels-like" class="text-white"></p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-white">
+                <div>
+                    <i class="fas fa-tint mr-2"></i>
+                    <span id="humidity"></span>
+                </div>
+                <div>
+                    <i class="fas fa-wind mr-2"></i>
+                    <span id="wind-speed"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert -->
+        <div id="alert" class="max-w-2xl mx-auto bg-red-500 text-white p-4 rounded-lg mb-8 hidden">
+            <i class="fas fa-exclamation-triangle mr-2"></i>
+            <span id="alert-message"></span>
+        </div>
+
+        <!-- Extended Forecast -->
+        <div id="extended-forecast" class="max-w-4xl mx-auto hidden">
+            <h3 class="text-2xl font-bold text-white text-center mb-6">5-Day Forecast</h3>
+            <div id="forecast-container" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <!-- Forecast cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="max-w-2xl mx-auto bg-red-500 text-white p-4 rounded-lg mb-8 hidden">
+            <i class="fas fa-exclamation-circle mr-2"></i>
+            <span id="error-text"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
