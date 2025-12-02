@@ -1,6 +1,6 @@
 // Weather Forecast App Script
 
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your API key
+const API_KEY = 'd72f44f52c83e60b092b3e5dcb640501'; // OpenWeatherMap API key
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 const GEO_URL = 'https://api.openweathermap.org/geo/1.0';
 
